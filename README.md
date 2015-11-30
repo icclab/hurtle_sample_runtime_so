@@ -1,6 +1,10 @@
 # Using the reactive SO and Notifications
 
-Please see the [README_notify.md](README_notify.md) on this.
+This SO shows how to use the runtime management capabilities provided by the SDK for a simple example: handle the unplanned termination of a virtual machine and restart it automatically.
+
+To achieve that, we use Monasca as an end-to-end monitoring and alarm management system. Each VM has an agent running inside which pushes metrics to Monasca. The SO sets up specific alarms at deployment time. When an alarm is triggered, a callback is issued to the service orchestrator with the alarm name as attribute. The SO can then take corrective actions on the underlying infrastructure.
+
+Please see the [README_notify.md](README_notify.md) for full documentation.
 
 # Testing SO without deploying it using CC
 ## Installation Guide
